@@ -11,9 +11,12 @@ Join us on [Slack](http://dataforgood.no/contact-us/), then join our [channel](h
 
 ### We Need Your Help
 
-See [all tasks](https://github.com/DataForGood-Norway/FireFromSpace/issues?q=is%3Aopen) or click in the table below to find a list of specfic tasks.
+See [all tasks](https://github.com/DataForGood-Norway/FireFromSpace/issues?q=is%3Aopen) organised in:
 
-The project is just starting, but we will soon list some tasks and objectives here which you can contribute too. Don't hesitate to contact us and ask questions on [our Slack channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
+* [Milestones/Objectives](https://github.com/DataForGood-Norway/FireFromSpace/milestones),
+* [Kanban boards](https://github.com/DataForGood-Norway/FireFromSpace/projects) to track their development.
+
+The project is just starting, but come help us or learn with us. Don't hesitate to contact us and ask questions on [our Slack channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
 
 
 ## What Are We Doing?
