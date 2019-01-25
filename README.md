@@ -11,7 +11,7 @@ Join us on [Slack](http://dataforgood.no/contact-us/), then join our [channel](h
 
 ### We Need Your Help
 
-See [all tasks](https://github.com/DataForGood-Norway/ResoCrawl/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen) or click in the table below to find a list of specfic tasks.
+See [all tasks](https://github.com/DataForGood-Norway/FireFromSpace/issues?q=is%3Aopen) or click in the table below to find a list of specfic tasks.
 
 The project is just starting, but we will soon list some tasks and objectives here which you can contribute too. Don't hesitate to contact us and ask questions on [our Slack channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
 
@@ -45,9 +45,22 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 - Spotting Colombia deforestation (before on [2018, Feb. 9th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-09&atmFilter=&showDates=true) and after on [2018, Feb. 10th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-10&atmFilter=&showDates=true), moving on on [2018, Feb 20th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-20&atmFilter=&showDates=true).
 - Deonar's garbage burning [(2016, Janv. 30th)](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=19.06994618081784&lng=72.92392015457153&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2015-07-01%7C2016-01-30&atmFilter=&showDates=true),  continuously polluting the air until [2016, March 28th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=19.06994618081784&lng=72.92392015457153&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2015-09-01%7C2016-03-28&atmFilter=&showDates=true).
 
+## References
+
+* **Satellite data allows real-time detection of potential fires** ([article, Aug. 2018](https://earth.esa.int/web/guest/content/-/article/satellite-data-allows-real-time-detection-of-potential-fires)): seems that using Landsat only. Using Sentinel 2 should give better results ;)
+* NASA covers wildfires from many sources ([Phys.org, Jan. 2018](https://phys.org/news/2018-01-nasa-wildfires-sources.html))
+* 3 Active Fire Maps: How to Track Real-Time Wildfires Around the World ([gisgeography.com, 2018](https://gisgeography.com/active-fire-maps-real-time-wildfires/))
+* **Python from Space Analyzing Open Satellite Imagery Using the Python Ecosystem** ([PyCon 2017, Katherine Scott](https://www.youtube.com/watch?v=rUUgLsspTZA))
+    * [github.com/kscottz/PythonFromSpace](https://github.com/kscottz/PythonFromSpace)
+* The potentials of Sentinel-2 and LandSat-8 data in green infrastructure extraction, using object based image analysis (OBIA) method ([article, June 2017](https://www.tandfonline.com/doi/full/10.1080/22797254.2017.1419441))
 
 
+## Tools
 
-
+* [US EarthExplorer](https://earthexplorer.usgs.gov/)
+* [Sentinel 2 Playground](https://www.sentinel-hub.com/explore/sentinel-playground)
+    * [Sentinel Hub pricing](https://www.sentinel-hub.com/pricing-plans)
+* [Live view of Landsat imagery](http://live.farearth.com/)
+    * [Live position of Landsat satellites](http://live.farearth.com/observer/)
 
 
