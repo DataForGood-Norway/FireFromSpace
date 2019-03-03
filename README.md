@@ -67,5 +67,8 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
     * [Sentinel Hub pricing](https://www.sentinel-hub.com/pricing-plans)
 * [Live view of Landsat imagery](http://live.farearth.com/)
     * [Live position of Landsat satellites](http://live.farearth.com/observer/)
+* [Google Cloud Podcast](https://www.gcppodcast.com/post/episode-41-descartes-labs-with-tim-kelton/) for processing (PetaBytes) satellite imagery almost for free on GCP (using pre-emptible VMs).
 
-
+    * [LandSat data on Google Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/landsat)
+    * [Sentinel 2 data on Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/sentinel-2)
+    * [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScipt/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
