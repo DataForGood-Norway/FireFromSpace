@@ -50,6 +50,7 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 - [Southern Portugal, August 2018](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=37.274530905549355&lng=-8.45998764038086&zoom=13&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=39&gain=1.0&gamma=1.0&time=2018-02-01%7C2018-08-08&atmFilter=&showDates=false).
 - [Central Portugal, Summer 2017](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=39.98843197151454&lng=-8.052978515625&zoom=11&preset=2_COLOR_INFRARED__VEGETATION_&layers=B01,B02,B03&maxcc=100&gain=1.0&gamma=1.0&time=2017-01-01%7C2017-07-07&atmFilter=&showDates=false).
 
+
 ## References
 
 * **Satellite data allows real-time detection of potential fires** ([article, Aug. 2018](https://earth.esa.int/web/guest/content/-/article/satellite-data-allows-real-time-detection-of-potential-fires)): seems that using Landsat only. Using Sentinel 2 should give better results ;)
@@ -58,6 +59,8 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 * **Python from Space Analyzing Open Satellite Imagery Using the Python Ecosystem** ([PyCon 2017, Katherine Scott](https://www.youtube.com/watch?v=rUUgLsspTZA))
     * [github.com/kscottz/PythonFromSpace](https://github.com/kscottz/PythonFromSpace)
 * The potentials of Sentinel-2 and LandSat-8 data in green infrastructure extraction, using object based image analysis (OBIA) method ([article, June 2017](https://www.tandfonline.com/doi/full/10.1080/22797254.2017.1419441))
+* [Satellite Imagery Analysis with Python](https://medium.com/analytics-vidhya/satellite-imagery-analysis-with-python-3f8ccf8a7c32)
+* [Working with Satellite Data, a Gentle Introduction to GDAL Part](https://medium.com/planet-stories/a-gentle-introduction-to-gdal-part-4-working-with-satellite-data-d3835b5e2971)
 
 
 ## Tools
@@ -72,3 +75,24 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
     * [LandSat data on Google Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/landsat)
     * [Sentinel 2 data on Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/sentinel-2)
     * [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScipt/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
+* [pySAL](https://pysal.readthedocs.io/en/latest/): Python Spatial Analysis Library
+
+
+## Installation
+
+```shell
+conda create --name sat_3.6 --file environment.yml
+```
+
+it contains:
+
+* pySAL (https://pysal.readthedocs.io/en/v1.9/users/installation.html)
+* planet (https://pypi.org/project/planet/)
+
+## Improvements
+
+Backup environment
+
+```shell
+conda env create --file=environment.yml
+```
