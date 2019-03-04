@@ -1,15 +1,17 @@
 name: sat_3.6
 channels:
+  - conda-forge
   - defaults
 dependencies:
-  - ca-certificates=2019.1.23=0
-  - certifi=2018.11.29=py36_0
+  - ca-certificates=2018.11.29=ha4d7672_0
+  - certifi=2018.11.29=py36_1000
+  - geojson=2.4.1=py_0
+  - openssl=1.1.1b=h14c3975_0
   - libedit=3.1.20181209=hc058e9b_0
   - libffi=3.2.1=hd88cf55_4
   - libgcc-ng=8.2.0=hdf63c60_1
   - libstdcxx-ng=8.2.0=hdf63c60_1
   - ncurses=6.1=he6710b0_1
-  - openssl=1.1.1b=h7b6447c_0
   - pip=19.0.3=py36_0
   - python=3.6.8=h0371630_0
   - readline=7.0=h7b6447c_5
@@ -30,7 +32,6 @@ dependencies:
     - cycler==0.10.0
     - decorator==4.3.2
     - descartes==1.1.0
-    - geojson==2.4.1
     - idna==2.8
     - ipython==7.3.0
     - ipython-genutils==0.2.0
