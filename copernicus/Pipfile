@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+opencv-python = "*"
+ipython = "*"
+flask = "*"
+apache-beam = "*"
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+pydocstyle = "*"
+pytest = "*"
+pytest-mock = "*"
+
+[requires]
+python_version = "3.7"
