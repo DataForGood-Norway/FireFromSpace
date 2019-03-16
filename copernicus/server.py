@@ -5,8 +5,8 @@ A Flask app to trigger some image processing from a webapp.
 """
 
 from flask import Flask, jsonify
-
-from processing.image_processing import ImageProcess
+from pathlib import Path
+from processing.satellite_image import MonitoredRegion
 
 
 def create_app():
@@ -15,26 +15,18 @@ def create_app():
     app = Flask(__name__)
 
     # initialize app
-    path_to_images = ""
-    process = ImageProcess(path_to_images)
+    path_to_images = Path(".")
+    region = MonitoredRegion(path_to_images)
 
-    @app.route('/locate_fire')
+    @app.route('/')
     def locate_fire():
-        fires = process.locate_fire_from_image(path_to_images)
+        fires = region.image.locate_fire_from_image()
+
         response = {
-            'statuses': statuses,
+            'fires_detected': fires,
             'status': 'ok'
         }
         return jsonify(response)
 
-    @app.route('/xmts_statuses')
-    def test_persist():
-        statuses = xmts_statuses.get_statuses()
-        xmts_statuses.persist_statuses(statuses)
-        response = {
-            'statuses': statuses,
-            'status': 'ok'
-        }
-        return jsonify(response)
 
     return app
