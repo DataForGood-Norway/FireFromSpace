@@ -9,6 +9,8 @@ ipython = "*"
 flask = "*"
 apache-beam = "*"
 pillow = "*"
+matplotlib = "*"
+scipy = "*"
 
 [dev-packages]
 pylint = "*"
