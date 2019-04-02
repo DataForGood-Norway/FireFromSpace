@@ -8,12 +8,15 @@ Image manipulation:
 - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc.html
 """
 
+# What image processing library is best?
 import cv2
+import dill
 from PIL import Image, ImageFilter, ImageOps
-from scipy.ndimage import imread
+from typing import List, Set, Dict, Tuple, Optional
+# from scipy.ndimage import imread
 
 
-def split_image_into_RGB(path_to_image):
+def split_image_into_RGB(path_to_image: str) -> Tuple[int]:
     """
     use OpenCV to split every channel into RGB
     (https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_core/py_basic_ops/py_basic_ops.html#splitting-and-merging-image-channels),
@@ -29,18 +32,18 @@ def normalize2(pil_img):
 
 
 def normalize(img):
-  '''
-  Normalize the exposure of an image.
-  @args:
+    '''
+    Normalize the exposure of an image.
+    @args:
     {numpy.ndarray} img: an array of image pixels with shape:
-      (height, width)
-  @returns:
+        (height, width)
+    @returns:
     {numpy.ndarray} an image with shape of `img` wherein
-      all values are normalized such that the min=0 and max=255
-  '''
-  _min = img.min()
-  _max = img.max()
-  return img - _min * 255 / (_max - _min)
+        all values are normalized such that the min=0 and max=255
+    '''
+    _min = img.min()
+    _max = img.max()
+    return img - _min * 255 / (_max - _min)
 
 
 def convert_jp2_to_png(jp2):

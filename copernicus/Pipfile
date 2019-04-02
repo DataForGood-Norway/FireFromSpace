@@ -11,6 +11,8 @@ apache-beam = "*"
 pillow = "*"
 matplotlib = "*"
 scipy = "*"
+cachetools = "*"
+dill = "*"
 
 [dev-packages]
 pylint = "*"

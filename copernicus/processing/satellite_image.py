@@ -10,13 +10,14 @@ Image manipulation:
 
 
 import cv2
+import dill
 from PIL import Image
 from datetime import datetime
 import numpy as np
 from pathlib import Path, PosixPath
 from datetime import datetime, timedelta
 import image_processing
-
+import matplotlib.pyplot as plt
 
 class MonitoredRegion():
     """
@@ -42,15 +43,16 @@ class SatelliteImage():
     """
     Store and process information about a single satellite image.
     - coordinates of boundaries
+    - convert jp2 to png (https://docs.opencv.org/3.0-beta/modules/imgcodecs/doc/reading_and_writing_images.html)
     - Sentinel 2 metadata
     - fires detected on it, or not
     - store the image if relevant, remove it otherwise
     """
 
-    def __init__(self, path_to_channels: str):
+    def __init__(self, path_to_bands: str):
         # coordinates, resolution, cloud coverage, ...
-        self.channels = {}
-        for pth in path_to_channels.glob("*.png"):
+        self.bands = {}
+        for pth in path_to_bands.glob("*.png"):
             if pth.is_file():
                 (tile_name, dtime, channel) = str(pth.resolve()).split(".")[0].split("_")
                 obj = {
@@ -59,26 +61,33 @@ class SatelliteImage():
                     "datetime_str": dtime,
                     "datetime": datetime.strptime(dtime, '%Y%m%dT%H%M%S'),
                     "RGB": None}
-                self.channels[channel] = obj
+                self.bands[channel] = obj
         self.sentinel_metadata = {}
         self.coordinates = None
 
-    def split_channels_into_RGBs(self):
-        for ch in self.channels:
-            self.channels[ch]["RGB"] = image_processing.split_image_into_RGB(str(self.channels[ch]["path"].resolve()))
+    def split_bands_into_RGBs(self):
+        for ch in self.bands:
+            if Path(ch).is_file():
+                with open(ch, 'rb') as in_strm:
+                    self.bands[ch]["RGB"] = dill.load(in_strm)
+            else:
+                self.bands[ch]["RGB"] = \
+                    image_processing.split_image_into_RGB(str(self.bands[ch]["path"].resolve()))
+                with open(ch, "wb") as dill_file:
+                    dill.dump(self.bands[ch]["RGB"], dill_file)
 
     def filter_image(self, filter_name):
         if filter_name == "FALSE_COLOR_URBAN":
-            min_common_size = min([self.channels[ch]["RGB"][0].shape[0]
-                                   for ch in ["B04", "B11", "B12"]])
-            r_step = int(self.channels["B12"]["RGB"][0].shape[0] / min_common_size)
-            r_intensity = self.channels["B12"]["RGB"][0][::r_step, ::r_step]
-            g_step = int(self.channels["B11"]["RGB"][0].shape[0] / min_common_size)
-            g_intensity = self.channels["B11"]["RGB"][1][::g_step, ::g_step]
-            b_step = int(self.channels["B04"]["RGB"][0].shape[0] / min_common_size)
-            b_intensity = self.channels["B04"]["RGB"][2][::b_step, ::b_step]
+            min_common_size = min([self.bands[ch]["RGB"][0].shape[0] for ch in ["B04", "B11", "B12"]])
+            r_step = int(self.bands["B12"]["RGB"][0].shape[0] / min_common_size)
+            r_intensity = self.bands["B12"]["RGB"][0][::r_step, ::r_step]
+            g_step = int(self.bands["B11"]["RGB"][0].shape[0] / min_common_size)
+            g_intensity = self.bands["B11"]["RGB"][1][::g_step, ::g_step]
+            b_step = int(self.bands["B04"]["RGB"][0].shape[0] / min_common_size)
+            b_intensity = self.bands["B04"]["RGB"][2][::b_step, ::b_step]
             # return cv2.merge((b_intensity, g_intensity, r_intensity))
-            return cv2.merge((r_intensity, g_intensity, b_intensity))
+            # return cv2.merge((r_intensity, g_intensity, b_intensity))
+            return image_processing.combine_RGB_into_image(r_intensity, g_intensity, b_intensity)
         else:
             raise AttributeError(f"The filter name '{filter_name}' isn't recognized! Consider implementing it!")
 
@@ -101,18 +110,33 @@ def main():
     region = MonitoredRegion(region_coordinates)
     path_to_Sentinels_products = region.query_scihub_copernicus()
 
-    path_to_channels = Path("..") / "data"
-    sat_image = SatelliteImage(path_to_channels)
-    sat_image.split_channels_into_RGBs()
-    img = sat_image.filter_image("FALSE_COLOR_URBAN")
-    import matplotlib.pyplot as plt
-    plt.imshow(img); plt.show() # showing smoke in red, but too dark if not 'img*5'
+    path_to_bands = Path("..") / "data"
+    sat_image = SatelliteImage(path_to_bands)
+    sat_image.split_bands_into_RGBs()
+    img1 = sat_image.filter_image("FALSE_COLOR_URBAN") # showing smoke in red, but too dark if not 'img*5'
     
     # normalize the image using Pillow
-    pil_im = Image.fromarray(img.astype("uint8"), "RGB")
-    plt.imshow(image_processing.normalize2(pil_im)); plt.show() # showing smoke in red
-    from IPython import embed; embed()
+    pil_im = Image.fromarray(img1.astype("uint8"), "RGB")
+    img2 = image_processing.normalize2(pil_im) # showing smoke in red
 
+    plt.subplot(231),plt.imshow(img1,'gray'),plt.title('FALSE_COLOR_URBAN')
+    plt.subplot(232),plt.imshow(img2,'gray'),plt.title('FALSE_COLOR_URBAN normalized PIL')
+
+    src = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+    equ1 = cv2.equalizeHist(src)
+    # A more general approach would be transforming RGB values into another space that
+    # contains a luminescence/intensity value (Luv, Lab, HSV, HSL), apply histeq only in intensity plane and perform the inverse transform.
+
+    color = ('b','g','r')
+    for i,col in enumerate(color):
+        histr = cv2.calcHist([img1],[i],None,[256],[0,256])
+        plt.subplot(233),plt.plot(histr,color = col)
+        plt.xlim([0,256])
+
+    plt.subplot(234),plt.imshow(equ1,'gray'),plt.title('FALSE_COLOR_URBAN equalized cv2')
+    plt.show()
+
+    from IPython import embed; embed()
 
 if __name__ == '__main__':
     main()
