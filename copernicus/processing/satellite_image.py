@@ -79,15 +79,15 @@ class SatelliteImage():
     def filter_image(self, filter_name):
         if filter_name == "FALSE_COLOR_URBAN":
             min_common_size = min([self.bands[ch]["RGB"][0].shape[0] for ch in ["B04", "B11", "B12"]])
-            r_step = int(self.bands["B12"]["RGB"][0].shape[0] / min_common_size)
+            r_step = int(self.bands["B12"]["RGB"][0].shape[0] / min_common_size) * 5
             r_intensity = self.bands["B12"]["RGB"][0][::r_step, ::r_step]
-            g_step = int(self.bands["B11"]["RGB"][0].shape[0] / min_common_size)
+            g_step = int(self.bands["B11"]["RGB"][0].shape[0] / min_common_size) * 5
             g_intensity = self.bands["B11"]["RGB"][1][::g_step, ::g_step]
-            b_step = int(self.bands["B04"]["RGB"][0].shape[0] / min_common_size)
+            b_step = int(self.bands["B04"]["RGB"][0].shape[0] / min_common_size) * 5
             b_intensity = self.bands["B04"]["RGB"][2][::b_step, ::b_step]
             # return cv2.merge((b_intensity, g_intensity, r_intensity))
             # return cv2.merge((r_intensity, g_intensity, b_intensity))
-            return image_processing.combine_RGB_into_image(r_intensity, g_intensity, b_intensity)
+            return image_processing.combine_RGB_into_image(b_intensity, g_intensity, r_intensity)
         else:
             raise AttributeError(f"The filter name '{filter_name}' isn't recognized! Consider implementing it!")
 
@@ -113,30 +113,47 @@ def main():
     path_to_bands = Path("..") / "data"
     sat_image = SatelliteImage(path_to_bands)
     sat_image.split_bands_into_RGBs()
-    img1 = sat_image.filter_image("FALSE_COLOR_URBAN") # showing smoke in red, but too dark if not 'img*5'
     
+    
+    img = sat_image.filter_image("FALSE_COLOR_URBAN") # showing smoke in red, but too dark if not 'img*5'
+    x, y, _ = img.shape
+    img1 = img[int(4/5*x):x, int(y/5):int(2*y/5), :]
+
     # normalize the image using Pillow
     pil_im = Image.fromarray(img1.astype("uint8"), "RGB")
-    img2 = image_processing.normalize2(pil_im) # showing smoke in red
+    img2 = image_processing.adjust_gamma(img1, gamma=2.5)
 
     plt.subplot(231),plt.imshow(img1,'gray'),plt.title('FALSE_COLOR_URBAN')
-    plt.subplot(232),plt.imshow(img2,'gray'),plt.title('FALSE_COLOR_URBAN normalized PIL')
+    plt.subplot(232),plt.imshow(img2,'gray'),plt.title('Gamma correction')  ## PIL image!!!!
 
     src = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     equ1 = cv2.equalizeHist(src)
+
     # A more general approach would be transforming RGB values into another space that
     # contains a luminescence/intensity value (Luv, Lab, HSV, HSL), apply histeq only in intensity plane and perform the inverse transform.
 
+    # cimg = image_processing.get_HSV_from_image(img1)
+    cimg = image_processing.get_HSV_from_image(img2)
+    
+    hsv_trans = image_processing.apply_color_mask(cimg)
+    plt.subplot(233),plt.imshow(hsv_trans,'gray'),plt.title('HSV')
+
     color = ('b','g','r')
     for i,col in enumerate(color):
-        histr = cv2.calcHist([img1],[i],None,[256],[0,256])
-        plt.subplot(233),plt.plot(histr,color = col)
+        histr1 = cv2.calcHist([img1],[i],None,[256],[0,256])
+        plt.subplot(234),plt.plot(histr1,color = col)
+
+        
+        # histr2 = cv2.calcHist([img2],[i],None,[256],[0,256])
+        # plt.subplot(235),plt.plot(histr2,color = col)
+
         plt.xlim([0,256])
 
-    plt.subplot(234),plt.imshow(equ1,'gray'),plt.title('FALSE_COLOR_URBAN equalized cv2')
+    plt.subplot(236),plt.imshow(equ1,'gray'),plt.title('FALSE_COLOR_URBAN equalized cv2')
     plt.show()
-
-    from IPython import embed; embed()
+    
+    image_processing.plot_HSV(img1)
+    # from IPython import embed; embed()
 
 if __name__ == '__main__':
     main()
