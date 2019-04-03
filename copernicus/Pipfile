@@ -13,6 +13,7 @@ matplotlib = "*"
 scipy = "*"
 cachetools = "*"
 dill = "*"
+sentinelsat = "*"
 
 [dev-packages]
 pylint = "*"

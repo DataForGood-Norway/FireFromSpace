@@ -34,6 +34,7 @@ class MonitoredRegion():
         https://scihub.copernicus.eu/
         https://scihub.copernicus.eu/twiki/do/view/SciHubWebPortal/APIHubDescription
         https://scihub.copernicus.eu/userguide/BatchScripting#Query_via_wget
+        https://sentinelsat.readthedocs.io/en/stable/api.html
         """
         path_to_Sentinels_products = None
         return path_to_Sentinels_products

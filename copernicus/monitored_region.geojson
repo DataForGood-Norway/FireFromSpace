@@ -1,0 +1,38 @@
+{
+    "url_geojson": "http://geojson.io/#map=11/39.7164/-121.4024",
+    "url_sentinelhub": "https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=39.770283617741015&lng=-121.5523910522461&zoom=11&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=99&gain=1.0&gamma=1.0&time=2018-05-01%7C2018-11-16&atmFilter=&showDates=false",
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -121.68251037597656,
+                            39.524699902077586
+                        ],
+                        [
+                            -121.15516662597656,
+                            39.524699902077586
+                        ],
+                        [
+                            -121.15516662597656,
+                            39.93343343839839
+                        ],
+                        [
+                            -121.68251037597656,
+                            39.93343343839839
+                        ],
+                        [
+                            -121.68251037597656,
+                            39.524699902077586
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
