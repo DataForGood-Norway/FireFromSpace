@@ -1,4 +1,4 @@
-# FireFromSpace
+*# FireFromSpace
 
 _Detect fire from satellite images_ 
 
@@ -49,6 +49,12 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 - Deonar's garbage burning [(2016, Janv. 30th)](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=19.06994618081784&lng=72.92392015457153&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2015-07-01%7C2016-01-30&atmFilter=&showDates=true),  continuously polluting the air until [2016, March 28th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=19.06994618081784&lng=72.92392015457153&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2015-09-01%7C2016-03-28&atmFilter=&showDates=true).
 - [Southern Portugal, August 2018](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=37.274530905549355&lng=-8.45998764038086&zoom=13&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=39&gain=1.0&gamma=1.0&time=2018-02-01%7C2018-08-08&atmFilter=&showDates=false).
 - [Central Portugal, Summer 2017](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=39.98843197151454&lng=-8.052978515625&zoom=11&preset=2_COLOR_INFRARED__VEGETATION_&layers=B01,B02,B03&maxcc=100&gain=1.0&gamma=1.0&time=2017-01-01%7C2017-07-07&atmFilter=&showDates=false).
+- [La Tune Fire, California, Sept. 2017](https://www.planet.com/gallery/la-tuna-fire-20170905/) No flames but huge!
+
+## About Sentinel2
+
+* [Bands](https://www.gdal.org/frmt_sentinel2.html): resolution, frequencies, purpose, definitions of "levels" (Level-1B, Level-1C, Level-2A), granules, ortho-rectified tiles, ...
+* [Processing in QGIS](https://www.youtube.com/watch?v=9VXv3hYYX3c) by Batbandi Uranchimeg.
 
 
 ## References
@@ -76,6 +82,7 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
     * [Sentinel 2 data on Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/sentinel-2)
     * [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScipt/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
 * [pySAL](https://pysal.readthedocs.io/en/latest/): Python Spatial Analysis Library
+* [Rastervision](https://docs.rastervision.io/en/0.8/): open source framework for Python developers building computer vision models on satellite.
 
 
 ## Installation
@@ -97,4 +104,4 @@ Backup environment
 
 ```shell
 conda env create --file=environment.yml
-```
+```*
