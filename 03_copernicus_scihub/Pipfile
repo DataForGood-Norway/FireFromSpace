@@ -5,7 +5,6 @@ verify_ssl = true
 
 [packages]
 opencv-python = "*"
-ipython = "*"
 flask = "*"
 apache-beam = "*"
 pillow = "*"
@@ -22,6 +21,8 @@ autopep8 = "*"
 pydocstyle = "*"
 pytest = "*"
 pytest-mock = "*"
+ipython = "*"
+jupyter = "*"
 
 [requires]
 python_version = "3.7"

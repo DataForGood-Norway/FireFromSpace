@@ -1,4 +1,4 @@
-*# FireFromSpace
+# FireFromSpace
 
 _Detect fire from satellite images_ 
 
@@ -55,7 +55,7 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 
 * [Bands](https://www.gdal.org/frmt_sentinel2.html): resolution, frequencies, purpose, definitions of "levels" (Level-1B, Level-1C, Level-2A), granules, ortho-rectified tiles, ...
 * [Processing in QGIS](https://www.youtube.com/watch?v=9VXv3hYYX3c) by Batbandi Uranchimeg.
-
+* [Centre d'Etude Spatial de la BIOsphere (CESBIO): How it works?](http://www.cesbio.ups-tlse.fr/multitemp/?page_id=1336): French/English explanations/definitons (e.g. [levels](http://www.cesbio.ups-tlse.fr/multitemp/?p=3202), [Cloud shadow detection](http://www.cesbio.ups-tlse.fr/multitemp/?p=911), [python tips](http://www.cesbio.ups-tlse.fr/multitemp/?tag=python), [sentinel2+OpenStreetMap](http://www.cesbio.ups-tlse.fr/multitemp/?p=14818), ...)
 
 ## References
 
@@ -83,6 +83,8 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
     * [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScipt/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
 * [pySAL](https://pysal.readthedocs.io/en/latest/): Python Spatial Analysis Library
 * [Rastervision](https://docs.rastervision.io/en/0.8/): open source framework for Python developers building computer vision models on satellite.
+* [EO-learn](https://medium.com/sentinel-hub/introducing-eo-learn-ab37f2869f5c): "a set of tools to make prototyping of complex EO workflows as easy, fast, and accessible as possible." ([github](https://github.com/sentinel-hub/eo-learn), [docs](https://eo-learn.readthedocs.io/en/latest/))
+* [Sentinelsat](https://sentinelsat.readthedocs.io/en/stable/): a Python package that "makes searching, downloading and retrieving the metadata of Sentinel satellite images from the Copernicus Open Access Hub easy."
 
 
 ## Installation
