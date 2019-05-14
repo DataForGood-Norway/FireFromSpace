@@ -16,6 +16,10 @@ Be it forest fires or villages being attacked, some fires can be detected from s
     * [About Sentinel2](#about-sentinel2)
     * [References](#references)
 * [Tools](#tools)
+    * [Visualize satellite images online](#visualize-satellite-images-online)
+    * [Image processing tools](#image-processing-tools)
+    * [Archves of satellites images](#archves-of-satellites-images)
+    * [Platforms/APIs for downloading satellite data](#platformsapis-for-downloading-satellite-data)
 * [Installation](#installation)
 * [Thanks](#thanks)
 
@@ -27,15 +31,15 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 
 ## What Are We Doing?
 
-While satellite's images are [free to access](https://apps.sentinel-hub.com/sentinel-playground), the amount of images to process in order to watch the whole of earth is just too big (over 4 Terabytes of fresh products published every day on the Copernicus portals).
+While many satellite's images are [free to access](https://apps.sentinel-hub.com/sentinel-playground), the amount of images to process in order to watch the whole of earth is just too big (over 4 Terabytes of fresh products published every day on the Copernicus portals).
 
-This tool won't allow us to monitor the entire planet. But it will be an opensource webapp for anyone to use, giving them the possibility to monitor large fires within a part of earth (e.g. a state monitoring a dry forest, garbage burning illegally and toxic for its neighbours, or more importantly the United Nations watching for genocide and human rights atrocities.
+This tool won't allow us to monitor the entire planet. But it will be the bsis of an opensource webapp for anyone to use, giving everyone the possibility to monitor a part of earth for large fires  (e.g. fire of a dry forest, garbage burning illegally intoxicating its neighbours, or a tool for the United Nations to watch for genocide and human rights atrocities.
 
-This project is mainly split into 2 parts:
+This project is mainly split into 2 applications:
 
-- **Processing Satellite's images for fire detection**: to measure and to locate the fire as accurately as possible. This module should be easily usable by any developer with a computer, therefore without worrying about any cost of cloud resources.
+- **a python library for handling Satellite's images and processing them to detect fire**: to measure and to locate the fire as accurately as possible. This module should be easily usable by any developer with a computer, therefore without worrying about any cost of cloud resources.
 
-- **a webapp**: For the other users who prefer a user interface, a webapp should allow them to rent cloud resources required for monitoring the part of earth they are interested in, or to share the cost with others watching the same area already.
+- **a webapp for non-developers eager to get alerted in case of fires**: For the other users who prefer a user interface, a webapp should allow them to rent cloud resources required for monitoring the part of earth they are interested in, or to share the cost with others watching the same area already.
 
 
 ## Join The Project
@@ -86,20 +90,46 @@ The project is just starting, but come help us or learn with us. Don't hesitate 
 
 ## Tools
 
+### Visualize satellite images online
+
+Geographic information system (GIS) platform for distribution of satellite data:
+
 * [US EarthExplorer](https://earthexplorer.usgs.gov/)
 * [Sentinel 2 Playground](https://www.sentinel-hub.com/explore/sentinel-playground)
     * [Sentinel Hub pricing](https://www.sentinel-hub.com/pricing-plans)
 * [Live view of Landsat imagery](http://live.farearth.com/)
     * [Live position of Landsat satellites](http://live.farearth.com/observer/)
-* [Google Cloud Podcast](https://www.gcppodcast.com/post/episode-41-descartes-labs-with-tim-kelton/) for processing (PetaBytes) satellite imagery almost for free on GCP (using pre-emptible VMs).
 
-    * [LandSat data on Google Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/landsat)
-    * [Sentinel 2 data on Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/sentinel-2)
-    * [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScipt/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
+### Image processing tools
+
 * [pySAL](https://pysal.readthedocs.io/en/latest/): Python Spatial Analysis Library
 * [Rastervision](https://docs.rastervision.io/en/0.8/): open source framework for Python developers building computer vision models on satellite.
-* [EO-learn](https://medium.com/sentinel-hub/introducing-eo-learn-ab37f2869f5c): "a set of tools to make prototyping of complex EO workflows as easy, fast, and accessible as possible." ([github](https://github.com/sentinel-hub/eo-learn), [docs](https://eo-learn.readthedocs.io/en/latest/))
-* [Sentinelsat](https://sentinelsat.readthedocs.io/en/stable/): a Python package that "makes searching, downloading and retrieving the metadata of Sentinel satellite images from the Copernicus Open Access Hub easy."
+* [Google Cloud Podcast](https://www.gcppodcast.com/post/episode-41-descartes-labs-with-tim-kelton/) discussing the process of (PetaBytes of) satellite imagery almost for free on GCP (using pre-emptible VMs).
+
+
+### Archves of satellites images
+
+* [LandSat data on Google Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/landsat)
+* [Sentinel 2 data on Cloud Storage](https://cloud.google.com/storage/docs/public-datasets/sentinel-2)
+* [Google Earth Engine](https://developers.google.com/earth-engine/datasets/): Datasets & JavaScript/[Python API](https://github.com/google/earthengine-api/tree/master/python/examples/ipynb) ([Installaton](https://developers.google.com/earth-engine/python_install)).
+
+
+### Platforms/APIs for downloading satellite data
+
+* [Awesome Sentinel](https://github.com/Fernerkundung/awesome-sentinel): a curated list of awesome tools, tutorials and APIs for Copernicus Sentinel satellite data.
+
+* [Copernicus Open Access Hub](https://scihub.copernicus.eu/):The Copernicus Open Access Hub (previously known as Sentinels Scientific Data Hub, or SciHub) provides complete, free and open access to Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P user products.
+    * [Manual download within the browser](https://www.youtube.com/watch?v=e9F7rQ559ks) in the browser, [stacking bands in QGIS](https://www.youtube.com/watch?v=Hh3bEGiZZ2I)
+    * [Sentinelsat](https://sentinelsat.readthedocs.io/en/stable/): a Python package that "makes searching, downloading and retrieving the metadata of Sentinel satellite images from the Copernicus Open Access Hub easy."
+    
+* [sentinel-hub](https://github.com/sentinel-hub): **Non-free** platform.
+    * [EO-Browser](https://apps.sentinel-hub.com/eo-browser/):  a search tool for Sentinel-1, -2, -3, Landsat 5, 7, 8, Modis and Envisat satellite imagery
+    * [sentinelhub-py](https://github.com/sentinel-hub/sentinelhub-py): Download and process satellite imagery in Python.
+    * [EO-learn](https://medium.com/sentinel-hub/introducing-eo-learn-ab37f2869f5c): "a set of tools to make prototyping of complex EO workflows as easy, fast, and accessible as possible." ([github](https://github.com/sentinel-hub/eo-learn), [docs](https://eo-learn.readthedocs.io/en/latest/))
+        * [Land cover classification](https://medium.com/sentinel-hub/land-cover-classification-with-eo-learn-part-1-2471e8098195?source=placement_card_footer_grid---------0-41)
+        * [Conflicts & Wildfires](https://medium.com/sentinel-hub/environmental-monitoring-of-conflicts-using-sentinel-2-61f07d76e27b)
+* [planet.com's Explorer](https://www.planet.com/explorer): "See the Earth change by navigating through space and time. Identify an area of interest using the search box, draw tools, or supported area definition files",  **Non-free** platform.
+* [LandSat python library](https://github.com/developmentseed/landsat-util)
 
 
 ## Installation
