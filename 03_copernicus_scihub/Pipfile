@@ -16,6 +16,7 @@ sentinelsat = "*"
 geopandas = "*"
 shapely = "*"
 geojsonio = "*"
+eo-learn = "*"
 
 [dev-packages]
 pylint = "*"

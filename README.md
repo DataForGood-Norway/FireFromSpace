@@ -4,19 +4,25 @@ _Detect fire from satellite images_
 
 Be it forest fires or villages being attacked, some fires can be detected from space. We hope to build a tool for monitoring the environment and watching for the safety of defenseless civilians.
 
-## Join The Project
 
-Join us on [Slack](http://dataforgood.no/contact-us/), then join our [channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
+## Content
+
+* [Goal](#goal)
+* [What Are We Doing?](#what-are-we-doing)
+* [Join The Project](#join-the-project)
+    * [We Need Your Help](#we-need-your-help)
+* [More Information](#more-information)
+    * [Spotted fires from space](#spotted-fires-from-space)
+    * [About Sentinel2](#about-sentinel2)
+    * [References](#references)
+* [Tools](#tools)
+* [Installation](#installation)
+* [Thanks](#thanks)
 
 
-### We Need Your Help
+## Goal
 
-See [all tasks](https://github.com/DataForGood-Norway/FireFromSpace/issues?q=is%3Aopen) organised in:
-
-* [Milestones/Objectives](https://github.com/DataForGood-Norway/FireFromSpace/milestones),
-* [Kanban boards](https://github.com/DataForGood-Norway/FireFromSpace/projects) to track their development.
-
-The project is just starting, but come help us or learn with us. Don't hesitate to contact us and ask questions on [our Slack channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
+Our goals is to help monitor fires all over the globe for plenty of good reasons.
 
 
 ## What Are We Doing?
@@ -32,17 +38,25 @@ This project is mainly split into 2 parts:
 - **a webapp**: For the other users who prefer a user interface, a webapp should allow them to rent cloud resources required for monitoring the part of earth they are interested in, or to share the cost with others watching the same area already.
 
 
-## Goal
+## Join The Project
 
-Our goals is to help monitor fires all over the globe for plenty of good reasons.
+Join us on [Slack](http://dataforgood.no/contact-us/), then join our [channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
+
+
+### We Need Your Help
+
+See [all tasks](https://github.com/DataForGood-Norway/FireFromSpace/issues?q=is%3Aopen) organised in:
+
+* [Milestones/Objectives](https://github.com/DataForGood-Norway/FireFromSpace/milestones),
+* [Kanban boards](https://github.com/DataForGood-Norway/FireFromSpace/projects) to track their development.
+
+The project is just starting, but come help us or learn with us. Don't hesitate to contact us and ask questions on [our Slack channel](https://dataforgood-norway.slack.com/messages/CFJFRAKT2/).
+
 
 
 ## More Information
 
-+ Thanks to **Trygve Halsne** from the Norwegian space center who shared this [demo](https://gist.github.com/hevgyrt/f141c985cc9d19aaaa0a4832ed80581a) monitoring vegetation change over a predefined area of interest by means of Sentinel-2.
-
-
-## Spotted fires from space
+### Spotted fires from space
 
 - Wildfires in California, USA clearly visile on [Sentinel Hub](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=36.22004146127195&lng=-118.61878395080566&zoom=13&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=30&gain=1.0&gamma=1.0&time=2018-05-01%7C2018-11-08&atmFilter=&showDates=true), less visible on [planet.com](https://www.planet.com/explorer/#/types/Sentinel2L1C/mosaic/global_monthly_2017_11_mosaic/center/-118.687,36.204/zoom/12/dates/2018-12-08T11:00:00.000Z..2018-12-19T23:59:59.999Z/geometry/POLYGON((-118.5289+36.22,-118.5306+36.2341,-118.5357+36.2477,-118.544+36.2602,-118.5552+36.2712,-118.5688+36.2802,-118.5844+36.2869,-118.6012+36.291,-118.6187+36.2924,-118.6363+36.291,-118.6531+36.2869,-118.6686+36.2802,-118.6823+36.2712,-118.6934+36.2602,-118.7017+36.2477,-118.7068+36.2341,-118.7086+36.22,-118.7068+36.2059,-118.7017+36.1923,-118.6934+36.1797,-118.6823+36.1687,-118.6686+36.1597,-118.6531+36.153,-118.6363+36.1489,-118.6187+36.1475,-118.6012+36.1489,-118.5844+36.153,-118.5688+36.1597,-118.5552+36.1687,-118.544+36.1797,-118.5357+36.1923,-118.5306+36.2059,-118.5289+36.22))/items/Sentinel2L1C%3AS2A_MSIL1C_20181218T184801_N0207_R070_T11SLA_20181218T202646/centerMarker/true/interval/1%20day) (Nov. 8th 2018).
 - Spotting Colombia deforestation (before on [2018, Feb. 9th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-09&atmFilter=&showDates=true) and after on [2018, Feb. 10th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-10&atmFilter=&showDates=true), moving on on [2018, Feb 20th](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=2.161990957069677&lng=-72.38258600234985&zoom=15&preset=3_FALSE_COLOR__URBAN_&layers=B01,B02,B03&maxcc=20&gain=1.0&gamma=1.0&time=2017-08-01%7C2018-02-20&atmFilter=&showDates=true).
@@ -51,13 +65,13 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 - [Central Portugal, Summer 2017](https://apps.sentinel-hub.com/sentinel-playground/?source=S2&lat=39.98843197151454&lng=-8.052978515625&zoom=11&preset=2_COLOR_INFRARED__VEGETATION_&layers=B01,B02,B03&maxcc=100&gain=1.0&gamma=1.0&time=2017-01-01%7C2017-07-07&atmFilter=&showDates=false).
 - [La Tune Fire, California, Sept. 2017](https://www.planet.com/gallery/la-tuna-fire-20170905/) No flames but huge!
 
-## About Sentinel2
+### About Sentinel2
 
 * [Bands](https://www.gdal.org/frmt_sentinel2.html): resolution, frequencies, purpose, definitions of "levels" (Level-1B, Level-1C, Level-2A), granules, ortho-rectified tiles, ...
 * [Processing in QGIS](https://www.youtube.com/watch?v=9VXv3hYYX3c) by Batbandi Uranchimeg.
 * [Centre d'Etude Spatial de la BIOsphere (CESBIO): How it works?](http://www.cesbio.ups-tlse.fr/multitemp/?page_id=1336): French/English explanations/definitons (e.g. [levels](http://www.cesbio.ups-tlse.fr/multitemp/?p=3202), [Cloud shadow detection](http://www.cesbio.ups-tlse.fr/multitemp/?p=911), [python tips](http://www.cesbio.ups-tlse.fr/multitemp/?tag=python), [sentinel2+OpenStreetMap](http://www.cesbio.ups-tlse.fr/multitemp/?p=14818), ...)
 
-## References
+### References
 
 * **Satellite data allows real-time detection of potential fires** ([article, Aug. 2018](https://earth.esa.int/web/guest/content/-/article/satellite-data-allows-real-time-detection-of-potential-fires)): seems that using Landsat only. Using Sentinel 2 should give better results ;)
 * NASA covers wildfires from many sources ([Phys.org, Jan. 2018](https://phys.org/news/2018-01-nasa-wildfires-sources.html))
@@ -67,7 +81,8 @@ Our goals is to help monitor fires all over the globe for plenty of good reasons
 * The potentials of Sentinel-2 and LandSat-8 data in green infrastructure extraction, using object based image analysis (OBIA) method ([article, June 2017](https://www.tandfonline.com/doi/full/10.1080/22797254.2017.1419441))
 * [Satellite Imagery Analysis with Python](https://medium.com/analytics-vidhya/satellite-imagery-analysis-with-python-3f8ccf8a7c32)
 * [Working with Satellite Data, a Gentle Introduction to GDAL Part](https://medium.com/planet-stories/a-gentle-introduction-to-gdal-part-4-working-with-satellite-data-d3835b5e2971)
-
+* ESA global observations of fires for their active climate change initiative: ["Essential climate variables"](https://www.youtube.com/watch?v=XxZjbCEm_nE&list=PLbyvawxScNbtxoBLSxzGDhpaB10J7DSzb&index=13), [data visualisation](http://cci.esa.int/content/tablet-app), specifically their [page on Fire CCI](https://www.esa-fire-cci.org/) (Climate Change Initiative)
+    * Mentionning a project named [FireCCISFD11 ](https://www.esa-fire-cci.org/node/280) (burned area dataset) using Sentinel sensors for land monitoring.
 
 ## Tools
 
@@ -100,10 +115,7 @@ it contains:
 * Rasterio (https://github.com/mapbox/rasterio): reads and writes geospatial raster data.
 * geojson (https://github.com/jazzband/python-geojson): Python bindings and utilities for GeoJSON
 
-## Improvements
 
-Backup environment
+## Thanks
 
-```shell
-conda env create --file=environment.yml
-```*
+- Thanks to **Trygve Halsne** from the Norwegian space center who shared this [demo](https://gist.github.com/hevgyrt/f141c985cc9d19aaaa0a4832ed80581a) monitoring vegetation change over a predefined area of interest by means of Sentinel-2 that got us started.
