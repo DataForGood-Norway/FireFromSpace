@@ -1,0 +1,84 @@
+{
+  "src/lib/components/Mapbox_dash.react.js": {
+    "description": "",
+    "displayName": "Mapbox_dash",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "mouse_position": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "x_prop": {
+              "name": "number",
+              "required": false
+            },
+            "y_prop": {
+              "name": "number",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "viewport": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "width": {
+              "name": "number",
+              "required": false
+            },
+            "height": {
+              "name": "number",
+              "required": false
+            },
+            "latitude": {
+              "name": "number",
+              "required": false
+            },
+            "longitude": {
+              "name": "number",
+              "required": false
+            },
+            "zoom": {
+              "name": "number",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{width: 800,\n      height: 800,\n      latitude: 37.7577,\n      longitude: -122.4376,\n      zoom: 8}",
+          "computed": false
+        }
+      },
+      "MAPBOX_TOKEN": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"pk.eyJ1IjoiYWxpc2hvYmVpcmkiLCJhIjoiY2ozYnM3YTUxMDAxeDMzcGNjbmZyMmplZiJ9.ZjmQ0C2MNs1AzEBC_Syadg\"",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  }
+}
